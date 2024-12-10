@@ -32,9 +32,11 @@ export default function Cart({ cartItems, setCartItems }) {
 
     function removeItem(item) {
         const updatedItems = cartItems.filter((i) => {
+            let bool = false;
             if (i.product._id !== item.product._id) {
-                return true;
+                bool = true;
             }
+            return bool;
         })
         setCartItems(updatedItems)
     }
