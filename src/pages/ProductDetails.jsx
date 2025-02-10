@@ -78,22 +78,9 @@ export default function ProductDetails({ cartItems, setCartItems }) {
             id="cart_btn"
             className="btn btn-primary d-inline ml-4"
             onClick={addToCart}
-            disabled={product.stock === 0}
           >
             Add to Cart
           </button>
-
-          <hr />
-
-          <p>
-            Status:{" "}
-            <span
-              id="stock_status"
-              className={product.stock > 0 ? "text-success" : "text-danger"}
-            >
-              {product.stock > 0 ? "In Stock" : "Out of Stock"}
-            </span>
-          </p>
 
           <hr />
 
