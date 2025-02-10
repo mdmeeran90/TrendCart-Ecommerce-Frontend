@@ -79,7 +79,7 @@ export default function Cart({ cartItems, setCartItems }) {
                                     <p id="card_item_price">${item.product.price}</p>
                                 </div>
                                 <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                    <div className="stockCounter d-inline">
+                                    <div className="stockCounter d-inline p-3">
                                         <span className="btn btn-danger minus" onClick={() => decreaseQty(item)}>-</span>
                                         <input
                                             type="number"
