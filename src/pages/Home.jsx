@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { useSearchParams } from "react-router-dom";
-import product from "../data/product.js";
+import productss from "../data/product.js";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -27,7 +27,7 @@ export default function Home() {
           {products.length > 0
             ? products.map((product,index) => <ProductCard  key={index} product={product} />)
             ? products.map((product,index) => <ProductCard key={index} product={product} />)
-            : product.map((product,index) => <ProductCard key={index}  product={product} />)}
+            : productss.map((product,index) => <ProductCard key={index}  product={product} />)}
         </div>
       </section>
     </Fragment>
