@@ -122,3 +122,4 @@ export default function Cart({ cartItems, setCartItems }) {
             <p>Your order has been placed successfully.</p>
         </Fragment>)
 }
+
