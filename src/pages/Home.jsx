@@ -8,14 +8,22 @@ export default function Home() {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    try {
-      fetch(process.env.REACT_APP_API_URL + "/products")
-        .then((res) => res.json())
-        .then((res) => setProducts(res.products));
- 
-    } catch (error) {
-      console.error(error.message);
-    }
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(process.env.REACT_APP_API_URL + "/products");
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (error) {
+        console.error("Failed to fetch products:", error.message);
+      }
+    };
+
+    fetchProducts();
   }, [searchParams]);
 
   return (
@@ -25,9 +33,12 @@ export default function Home() {
       <section id="products" className="container mt-5">
         <div className="row">
           {products.length > 0
-            ? products.map((product,index) => <ProductCard  key={index} product={product} />)
-            ? products.map((product,index) => <ProductCard key={index} product={product} />)
-            : productss.map((product,index) => <ProductCard key={index}  product={product} />)}
+            ? products.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))
+            : productss.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))}
         </div>
       </section>
     </Fragment>
