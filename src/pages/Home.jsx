@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { useSearchParams } from "react-router-dom";
-import productss from "../data/product.js";
+import productss from "../data/Product.js";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
