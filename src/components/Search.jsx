@@ -16,9 +16,8 @@ export default function Search() {
             <input
                 type="text"
                 id="search_field"
-                value={keyword} // Controlled input
+                value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && searchHandler()} // Search on Enter key
                 className="form-control"
                 placeholder="Enter Product Name ..."
             />
