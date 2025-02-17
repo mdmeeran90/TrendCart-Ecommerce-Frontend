@@ -7,7 +7,7 @@ export default function Search() {
 
     const searchHandler = () => {
         if (keyword.trim()) {
-            navigate(`/search?keyword=${encodeURIComponent(keyword)}`);
+            navigate('/search?keyword='keyword);
         }
     };
 
