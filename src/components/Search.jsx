@@ -7,7 +7,7 @@ export default function Search() {
 
     const searchHandler = () => {
         if (keyword.trim()) {
-            navigate('/search?keyword='keyword);
+            navigate('/search?keyword='+keyword);
         }
     };
 
